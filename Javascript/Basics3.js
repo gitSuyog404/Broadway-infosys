@@ -66,4 +66,18 @@
 // console.log(a.splice(2, 0, "two"));
 // console.log(a);
 
-// Friday  8:07 wala recording bata herna thalne aba
+// let a = [1, 2, 3, 4, 5, 6, 7, 8];
+// console.log(a.join("-"));
+// console.log(a.indexOf(5));
+// console.log(a.includes(5));
+
+// QUESTION :  GENERATE A USERNAME FROM THE GIVEN EMAIL
+// let email = "suyogbaniya@gmail.com";
+// let username = email.split("@");
+// console.log(username[0]);
+
+// alternative way for the same question
+
+// let email = "suyogbaniya@gmail.com";
+// let username = email.slice(0, email.indexOf("@"));
+// console.log(username);
