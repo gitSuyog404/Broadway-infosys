@@ -58,12 +58,12 @@
 
 // slice
 
-let a = [1, 2, 3, 4, 5, 6, 7, 8];
+// let a = [1, 2, 3, 4, 5, 6, 7, 8];
 // console.log(a.slice(1, 4));
 // console.log(a.splice(2, 1));
 // console.log(a.splice(2, 1, "two"));
 
-console.log(a.splice(2, 0, "two"));
-console.log(a);
+// console.log(a.splice(2, 0, "two"));
+// console.log(a);
 
 // Friday  8:07 wala recording bata herna thalne aba
