@@ -1,0 +1,39 @@
+Question 1 : FizzBuzz
+
+Write a program that prints the numbers from 1 to 100. But for multiples of three, print "Fizz" instead of number, and for the multiples of five, print "Buzz". For numbers which are mulitples of both three and five, print "FizzBuzz".
+
+Question 2 : Sum of Array Elements
+
+Write a function sumArray(arr) that takes an array of numbers and returns the sum of the elements. Use a loop to iterate through the array and sum the numbers.
+
+Question 3: Remove Duplicates
+
+Write a function removeDuplicates(arr) that takes an array and returns a new array with duplicate elements removed. Use loops and conditionals to check for duplicates.
+
+Question 4: Find the Maximum number
+
+Write a function findMax(arr) that takes an array of numbers and returns the largest number in the array. Use a loop to iterate through the array and a conditional to keep track of the maximum value.
+
+Question 5: Count Vowels
+
+Write a function countVowels(str) that takes a string and returns the number of vowels (a,e,i,o,u) in the string. Use a loop to iterate through the string and a conditional to check if each character is a vowel.
+
+Question 6: Reverse an Array.
+
+Write a function reverseArray(arr) that takes an array and returns a new array with the elements in reverse order. Use a loop to iterate through the array from the end of the beginning.
+
+Question 7: Palindrome Checker
+
+Write a function isPalindrome(str) that takes a string and returns true if the string is a palindrome (it reads the same forward and backward) and false otherwise. Use a loop to compare characters from the beginning and end of the string.
+
+Question 8: Average of Array
+
+Write a function averageArray(arr) that takes an array of numbers and returns the average of the elements. Use a loop to calculate the sum of the elements and then divide by the number of elements.
+
+Question 9: Merge and Sort Arrays
+
+Write a function mergeAndSort(arr1,arr2) that takes two arrays, merges them into one array, and returns the merged array sorted in ascending order. Use array methods and loops as needed. 
+
+Question 10: Find Common Elements
+
+Write a function commonElements(arr1,arr2) that takes two arrays and returns a new array containing the common elements between the two arrays. Use loops and conditionals to find and store the common elements.
