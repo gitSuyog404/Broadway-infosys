@@ -14,4 +14,27 @@
 //   }
 // }
 
-// Next one Sunday 8:15 am bata continue
+// While loop
+
+// Write a program to find the factorial of a given number using loops
+
+// let num = 5;
+// let fact = 1;
+// while (num > 0) {
+//   fact = fact * num;
+//   num--; // num = num-1;
+// }
+// console.log(fact);
+
+// Do while loop
+
+// let num = 10;
+// let fact = 1;
+
+// do {
+//   console.log(num);
+//   fact = fact * num;
+
+//   num--;
+// } while (num > 0);
+// console.log(fact);
