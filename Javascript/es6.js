@@ -43,6 +43,48 @@
 
 // .every ma chai sabai element le condition meet garnu parxa
 
+// let numbers = [1, 2, 3, 4, 5];
+// let result = numbers.every((n) => n % 2 == 0);
+// console.log(result);
+
+// Object Destructuring
+
+// For array
+
+// let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+// let [first, second] = numbers;
+
+// console.log(`The first element is ${first} and second element is ${second}`);
+
+// FOR OBJECTS
+
+// let user = {
+//   email: "email@gmail.com",
+//   password: "12345",
+// };
+
+// let { email, password } = user;
+
+// DOING THE SAME THING
+// let email = user.email;
+// let password = user.password;
+
+// console.log(email);
+// console.log(password);
+
+// Spread operator
+
+// EXAMPLE FOR ARRAY
+
 let numbers = [1, 2, 3, 4, 5];
-let result = numbers.every((n) => n % 2 == 0);
-console.log(result);
+
+let newnum = [...numbers, 6, 7, 8, 9, 10];
+console.log(newnum);
+
+// EXAMPLE FOR OBJECTS
+
+let user = { email: "email@gmail.com", age: 1 };
+let newUser = { ...user, password: "1234" };
+
+console.log(newUser);
