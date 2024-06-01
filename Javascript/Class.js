@@ -67,7 +67,9 @@ class Customer {
 
   getCustInfo() {
     console.log(
-      `The first person is ${this.fullname} and this person is ${this.age} years old and this person lives in ${this.address}.`
+      `The first person is ${this.fullname} and this person is ${
+        this.#age
+      } years old and this person lives in ${this.address}.`
     );
   }
 }
