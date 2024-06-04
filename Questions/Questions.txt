@@ -37,3 +37,11 @@ Write a function mergeAndSort(arr1,arr2) that takes two arrays, merges them into
 Question 10: Find Common Elements
 
 Write a function commonElements(arr1,arr2) that takes two arrays and returns a new array containing the common elements between the two arrays. Use loops and conditionals to find and store the common elements.
+
+
+
+
+
+Question 11: 
+
+Consider you have an array which stores user’s information and an array with the details of the blogs posted by the users. Please create an asynchronous function implementing setTimeout function in javascript which will get the user id based on the user email and then use that userid to fetch the blogs posted by that particular user.
