@@ -35,7 +35,7 @@ let getBlog = (email) => {
             usrBlog.push(blog.text);
           }
         }
-        resolve(usrBlog);
+        resolve(usrBlog[0]);
       }, 2000);
     }, 2000);
   });
