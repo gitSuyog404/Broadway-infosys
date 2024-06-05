@@ -17,3 +17,7 @@ let blog: Blog = {
 };
 
 // interface chai hamile override ra reopen garna milxa
+
+// typescript ko config file use garna
+//  tsc -- init
+// tsc - watch
