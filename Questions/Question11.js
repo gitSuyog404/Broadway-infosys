@@ -1,23 +1,50 @@
 // Consider you have an array which stores user’s information and an array with the details of the blogs posted by the users. Please create an asynchronous function implementing setTimeout function in javascript which will get the user id based on the user email and then use that userid to fetch the blogs posted by that particular user.
 
 let users = [
-  { userId: 1, email: "john@example.com" },
-  { userId: 2, email: "Max@example.com" },
+  { userid: 1, email: "johnwick@gmail.com" },
+  { userid: 2, email: "maxpayne@gmail.com" },
 ];
 
 let blogs = [
-  { blogId: 1, text: "blog1", postedBy: 1 },
-  { blogId: 2, text: "blog2", postedBy: 2 },
+  { blogid: 1, text: "blog1", postedBy: 1 },
+  { blogid: 2, text: "blog2", postedBy: 2 },
 ];
 
+let getBlog = (email) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      let userId = null;
 
-let  getUserId =(email)=>{
-    return new Promise (resolve, reject) =>{
-        setTimeout(()=>{
-            if(users.includes(users.email)){
-                return userId = users.userId; 
-            }
-        },2000)
-    }
-}
+      for (let user of users) {
+        if (user.email === email) {
+          userId = user.userid;
+          break;
+        }
+      }
 
+      if (userId === null) {
+        reject(new Error("USER NOT FOUND"));
+        return;
+      }
+
+      setTimeout(() => {
+        let usrBlog = [];
+
+        for (let blog of blogs) {
+          if (blog.postedBy === userId) {
+            usrBlog.push(blog.text);
+          }
+        }
+        resolve(usrBlog);
+      }, 2000);
+    }, 2000);
+  });
+};
+
+getBlog("johnwick@gmail.com")
+  .then((blogs) => {
+    console.log("Blogs by johnwick@gmail.com: ", blogs);
+  })
+  .catch((error) => {
+    console.error(error.message);
+  });
