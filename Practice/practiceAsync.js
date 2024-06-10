@@ -22,10 +22,25 @@
 
 // Promise use gareko
 
-let calculateArea = (L,B)=>{
-    return new Promise ((resolve,reject)=>{
-        setTimeout(()=>{
-            if(L<0 || B <0)
-        })
-    })
-}
+let area = (length, breadth) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (length < 0 || breadth < 0) {
+        let message = new Error("Length or breadth cannot be negative");
+        reject(message);
+      } else {
+        let area = length * breadth;
+        resolve(area);
+      }
+    }, 1000);
+  });
+};
+
+area(40, 50)
+  .then((result) => {
+    console.log(result);
+  })
+
+  .catch((error) => {
+    console.log(error.message);
+  });
