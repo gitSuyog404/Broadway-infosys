@@ -12,6 +12,13 @@
 
 // Method 2
 
-const { sum, sub } = require("./calculator.js");
+// const { sum, sub } = require("./calculator.js");
 
-console.log(sub(4, 3));
+// console.log(sub(4, 3));
+
+// Import using ES modules
+
+import { sum, sub } from "./calculator.js";
+
+console.log(sum(3, 4));
+console.log(sub(5, 3));

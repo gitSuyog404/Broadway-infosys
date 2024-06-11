@@ -1,10 +1,10 @@
-let sum = (a, b) => {
-  return a + b;
-};
+// let sum = (a, b) => {
+//   return a + b;
+// };
 
-let sub = (a, b) => {
-  return a - b;
-};
+// let sub = (a, b) => {
+//   return a - b;
+// };
 
 // console.log(sum(1, 2));
 
@@ -18,5 +18,20 @@ let sub = (a, b) => {
 
 // Method 2
 
-exports.sum = sum;
-exports.sub = sub;
+// exports.sum = sum;
+// exports.sub = sub;
+
+// Node ma two types of modules system hunxa mathi diyeko chai common js vayo arko chai ES modules hunxa
+
+// Es modules chalauna chai package.json ma gayera
+// "type" : "module" rakhne
+// export default chai euta ko lagi matra use hunxa
+// for multiple exports use export keyword
+
+export let sum = (a, b) => {
+  return a + b;
+};
+
+export let sub = (a, b) => {
+  return a - b;
+};
