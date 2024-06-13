@@ -91,14 +91,29 @@
 import http from "http";
 import fs from "fs";
 
+let user = {
+  id: 1,
+  username: "John.Doe",
+};
+
 const server = http.createServer((req, res) => {
   console.log(req.method, req.url);
 
   if (req.url === "/") {
-    res.end("HomePage");
+    fs.readFile("./index.html", (err, data) => {
+      if (err) {
+        console.log(err.message);
+      } else {
+        res.end(data);
+      }
+    });
+    // res.end("HomePage");
   } else if (req.url === "/about") {
     res.setHeader("Content-Type", "text/html");
     res.end("<h2>AboutPage</h2>");
+  } else if (req.url === "/user") {
+    res.setHeader("Content-Type", "application/json");
+    res.end(JSON.stringify(user));
   } else {
     // res.statusCode = 404;
     // res.setHeader("Content-Type", "text/html");
