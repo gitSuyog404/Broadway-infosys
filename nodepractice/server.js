@@ -47,41 +47,67 @@
 //   console.log("Server is running on http://localhost:3000");
 // });
 
+// import http from "http";
+// import fs from "fs";
+// import path from "path";
+
+// const server = http.createServer((req, res) => {
+//   let filePath = "";
+//   let contentType = "text/html";
+
+//   switch (req.url) {
+//     case "/":
+//       filePath = path.join(__dirname, "nodepractice", "index.html");
+//       break;
+
+//     case "/about":
+//       filePath = path.join(__dirname, "nodepractice", "about.html");
+//       break;
+
+//     case "/contact":
+//       filePath = path.join(__dirname, "nodepractice", "contact.html");
+//       break;
+//   }
+//   fs.readFile(filePath, (err, data) => {
+//     if (err) {
+//       res.writeHead(500, { "Content-Type": "text/plain" });
+//       res.write("Internal Server Error");
+//       res.end();
+//     } else {
+//       res.writeHead(200, { "Content-Type": contentType });
+//       res.write(data);
+//       res.end();
+//     }
+//   });
+// });
+
+// const PORT = 3000;
+// server.listen(PORT, () => {
+//   console.log(`Server is listening on port ${PORT}`);
+// });
+
+// Sir ko solution
+
 import http from "http";
 import fs from "fs";
-import path from "path";
 
 const server = http.createServer((req, res) => {
-  let filePath = "";
-  let contentType = "text/html";
+  console.log(req.method, req.url);
 
-  switch (req.url) {
-    case "/":
-      filePath = path.join(__dirname, "index.html");
-      break;
+  if (req.url === "/") {
+    res.end("HomePage");
+  } else if (req.url === "/about") {
+    res.setHeader("Content-Type", "text/html");
+    res.end("<h2>AboutPage</h2>");
+  } else {
+    // res.statusCode = 404;
+    // res.setHeader("Content-Type", "text/html");
+    // The res.writeHead(statuscode, {content-type: text/html})
+    // This is the shorthand for statuscode and writehead
 
-    case "/about":
-      filePath = path.join(__dirname, "about.html");
-      break;
-
-    case "/contact":
-      filePath = path.join(__dirname, "contact.html");
-      break;
+    res.writeHead(404, { "Content-Type": "text/html" });
+    res.end("<h3> 404 Not Found </h3>");
   }
-  fs.readFile(filePath, (err, data) => {
-    if (err) {
-      res.writeHead(500, { "Content-Type": "text/plain" });
-      res.write("Internal Server Error");
-      res.end();
-    } else {
-      res.writeHead(200, { "Content-Type": contentType });
-      res.write(data);
-      res.end();
-    }
-  });
 });
 
-const PORT = 3000;
-server.listen(PORT, () => {
-  console.log(`Server is listening on port ${PORT}`);
-});
+server.listen(3000, () => console.log("Server is running"));
