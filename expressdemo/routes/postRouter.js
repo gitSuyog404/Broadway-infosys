@@ -1,15 +1,24 @@
 import express from "express";
-import { getPost } from "../controller/postController.js";
 
-const postRouter = express.Router();
+import {
+  getPost,
+  addPost,
+  deletePost,
+  updatePost,
+} from "../controller/postController.js";
 
-postRouter.get("/", (req, res) => {
-  res.send("<h1>The server is running</h1>");
+const pRouter = express.Router();
+
+pRouter.get("/", (req, res) => {
+  res.send("<h1>Server is running</h1>");
 });
 
-postRouter.post("/addpost");
-postRouter.get("/post", getPost);
-postRouter.put("/updatepost/:id");
-postRouter.delete("deletepost/:id");
+pRouter.get("/post", getPost);
 
-export default postRouter;
+pRouter.put("/updatepost/:id", updatePost);
+
+pRouter.delete("/deletepost/:id", deletePost);
+
+pRouter.post("/addPost", addPost);
+
+export default pRouter;

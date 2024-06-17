@@ -9,7 +9,7 @@ let users = [
 let vehicles = [
   { vehicleno: 1, makeYear: 2023, model: "Hellcat", company: "Dodge" },
 ];
-let Post = [
+let posts = [
   {
     id: 1,
     title: "Star wars",
@@ -17,4 +17,4 @@ let Post = [
   },
 ];
 
-export { users, vehicles, Post };
+export { users, vehicles, posts };
