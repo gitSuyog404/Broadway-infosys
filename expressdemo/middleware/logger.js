@@ -1,3 +1,11 @@
+import colors from "colors";
+
+let reqColors = {
+  GET: "green",
+  POST: "yellow",
+  PUT: "blue",
+  DELETE: "red",
+};
 let logger = (req, res, next) => {
   let today = new Date();
 
@@ -15,8 +23,8 @@ let logger = (req, res, next) => {
     let end = Date.now();
     console.log(
       `[${year}-${month}-${date}T${hr}-${min}-${sec}]: ${req.method} ${
-        req.url
-      } ${req.ip} ${res.statusCode} ${end - start}ms}`
+        req.originalUrl
+      } ${req.ip} ${res.statusCode} ${end - start}ms}`[reqColors[req.method]]
     );
   });
 
@@ -29,3 +37,9 @@ let logger = (req, res, next) => {
 };
 
 export default logger;
+
+// assignment
+
+// Create a new file to store the details that are stored in the console.log in a file
+
+// Ek choti colors package pani herne for exress js
