@@ -30,9 +30,18 @@
 import express from "express";
 import userRouter from "./routes/userRouter.js";
 import pRouter from "./routes/postRouter.js";
+import logger from "./middleware/logger.js";
 
 const app = express();
 app.use(express.json());
+
+// There are two ways or using middle ware which is globally and at route level
+
+app.use(logger);
+
+app.get("/", (req, res) => {
+  res.send("<h4>Server is running</h4>");
+});
 
 app.use("/api/users", userRouter);
 
