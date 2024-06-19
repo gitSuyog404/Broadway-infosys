@@ -1,6 +1,6 @@
 import { users, vehicles } from "../data.js";
 
-let getUser = (req, res) => {
+let getUser = (req, res, next) => {
   const id = req.query.id;
 
   if (id) {
@@ -9,7 +9,11 @@ let getUser = (req, res) => {
     if (user) {
       res.send(user);
     } else {
-      res.status(404).send({ error: "User not found" });
+      let err = new Error("User not found");
+      err.status = 404;
+      // throw err;
+      // Or
+      next(err);
     }
   } else {
     res.send(users);

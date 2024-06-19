@@ -31,10 +31,11 @@ import express from "express";
 import userRouter from "./routes/userRouter.js";
 import pRouter from "./routes/postRouter.js";
 import logger from "./middleware/logger.js";
+import errorHandler from "./middleware/errorHandler.js";
 
 const app = express();
 app.use(express.json());
-
+app.use(express.static("public"));
 // There are two ways or using middle ware which is globally and at route level
 
 app.use(logger);
@@ -46,6 +47,9 @@ app.get("/", (req, res) => {
 app.use("/api/users", userRouter);
 
 app.use("/api/posts", pRouter);
+
+// Always put the errorHandler at last after all the middlwares so that it can catch all the error in previous middleware
+app.use(errorHandler);
 
 app.listen(3000, () => {
   console.log("Server is up and running");
