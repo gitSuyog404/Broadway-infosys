@@ -32,6 +32,7 @@ import userRouter from "./routes/userRouter.js";
 import pRouter from "./routes/postRouter.js";
 import logger from "./middleware/logger.js";
 import errorHandler from "./middleware/errorHandler.js";
+import notFoundHandler from "./middleware/notFoundHandler.js";
 
 const app = express();
 app.use(express.json());
@@ -49,6 +50,8 @@ app.use("/api/users", userRouter);
 app.use("/api/posts", pRouter);
 
 // Always put the errorHandler at last after all the middlwares so that it can catch all the error in previous middleware
+// notFoundHandler lai chai errorHandler vanda thyakka mathi but aru middlware haru vanda tala rakhinxa
+app.use(notFoundHandler);
 app.use(errorHandler);
 
 app.listen(3000, () => {

@@ -21,3 +21,4 @@
 [2024-6-19T8-39-21]: GET /api/users/user?id=8 ::1 500 1ms
 [2024-6-19T8-39-27]: GET /api/users/user?id=8 ::1 404 4ms
 [2024-6-19T8-40-10]: GET /api/users/user?id=8 ::1 404 5ms
+[2024-6-19T8-58-7]: GET /api/users/user/abeasdjfa;sdf ::1 404 9ms
