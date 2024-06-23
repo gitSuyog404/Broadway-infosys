@@ -33,8 +33,41 @@ import pRouter from "./routes/postRouter.js";
 import logger from "./middleware/logger.js";
 import errorHandler from "./middleware/errorHandler.js";
 import notFoundHandler from "./middleware/notFoundHandler.js";
+import mongoose from "mongoose";
+import User from "./modules/userModel.js";
 
 const app = express();
+// Semicolon add garnu hudaina last ma
+
+// IFFI (Immediately Invoked function expression)
+(async () => {
+  try {
+    let conn = await mongoose.connect("mongodb://localhost:27017/Batch3");
+    console.log(`Connected to DB ${conn.connection.host}`);
+    // app.listen(3000, () => {
+    //   console.log("Server is up and running");
+    // });
+
+    // let user = await User.create({
+    //   username: "Suyog Baniya",
+    //   password: "password",
+    //   age: 20,
+    // });
+
+    let user = await User.find();
+    console.log(user);
+  } catch (err) {
+    console.log("Error connecting to DB", err.message);
+  }
+})();
+
+// .then((conn) =>{app.listen(3000, () => {
+//   console.log("Server is up and running");
+//   console.log(`Connected to mongodb at ${conn.connection.host}`)
+// });}
+// )
+// .catch((err) => console.log("Connected Failed to DB", err.message));
+
 app.use(express.json());
 app.use(express.static("public"));
 // There are two ways or using middle ware which is globally and at route level
@@ -53,7 +86,3 @@ app.use("/api/posts", pRouter);
 // notFoundHandler lai chai errorHandler vanda thyakka mathi but aru middlware haru vanda tala rakhinxa
 app.use(notFoundHandler);
 app.use(errorHandler);
-
-app.listen(3000, () => {
-  console.log("Server is up and running");
-});
