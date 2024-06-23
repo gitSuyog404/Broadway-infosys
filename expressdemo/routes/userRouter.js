@@ -1,21 +1,21 @@
-import express from "express";
-import {
-  getUser,
-  postUser,
-  deleteUser,
-  putUser,
-} from "../controller/userController.js";
+// import express from "express";
+// import {
+//   getUser,
+//   postUser,
+//   deleteUser,
+//   putUser,
+// } from "../controller/userController.js";
 // ES modules ma import garda file extension xuttaunu hudaina
 // import {...} from "../controller/userController.js"
-const router = express.Router();
+// const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.send("<h3>Server is running</h3>");
-});
+// router.get("/", (req, res) => {
+//   res.send("<h3>Server is running</h3>");
+// });
 
-router.get("/user", getUser);
+// router.get("/user", getUser);
 
-router.put("/updateuser/:id", putUser);
+// router.put("/updateuser/:id", putUser);
 
 // router.delete("/deleteuser/:id", (req, res) => {
 //   const userId = parseInt(req.params.id);
@@ -30,44 +30,44 @@ router.put("/updateuser/:id", putUser);
 //   }
 // });
 
-router.delete("/deleteuser/:id", deleteUser);
+// router.delete("/deleteuser/:id", deleteUser);
 
-router.post("/adduser", postUser);
+// router.post("/adduser", postUser);
 
-router.get("/vehicles", (req, res) => {
-  res.send(vehicles);
-});
+// router.get("/vehicles", (req, res) => {
+//   res.send(vehicles);
+// });
 
-router.post("/addvehicle", (req, res) => {
-  vehicles.push(req.body);
-  res.send({ message: "Vehicle Info added" });
-});
+// router.post("/addvehicle", (req, res) => {
+//   vehicles.push(req.body);
+//   res.send({ message: "Vehicle Info added" });
+// });
 
 // PUT method to update user information
 // :id vaneko chai varying value vayera rakheko ho
 
-router.put("/updateuser/:id", (req, res) => {
-  const userId = parseInt(req.params.id);
-  const updatedUser = req.body;
+// router.put("/updateuser/:id", (req, res) => {
+//   const userId = parseInt(req.params.id);
+//   const updatedUser = req.body;
 
-  let userFound = false;
+//   let userFound = false;
 
-  users = users.map((user) => {
-    if (user.id === userId) {
-      userFound = true;
-      return { ...user, ...updatedUser };
-    }
-    return user;
-  });
+//   users = users.map((user) => {
+//     if (user.id === userId) {
+//       userFound = true;
+//       return { ...user, ...updatedUser };
+//     }
+//     return user;
+//   });
 
-  if (userFound) {
-    res.send({ message: "USER UPDATED" });
-  } else {
-    res.status(404).send({ message: "USER NOT FOUND" });
-  }
-});
+//   if (userFound) {
+//     res.send({ message: "USER UPDATED" });
+//   } else {
+//     res.status(404).send({ message: "USER NOT FOUND" });
+//   }
+// });
 
-export default router;
+// export default router;
 
 // for posts
 /*    
