@@ -54,8 +54,8 @@ const app = express();
     //   age: 20,
     // });
 
-    let user = await User.find();
-    console.log(user);
+    //     let user = await User.find();
+    //     console.log(user);
   } catch (err) {
     console.log("Error connecting to DB", err.message);
   }
