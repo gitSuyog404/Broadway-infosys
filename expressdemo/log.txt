@@ -22,3 +22,15 @@
 [2024-6-19T8-39-27]: GET /api/users/user?id=8 ::1 404 4ms
 [2024-6-19T8-40-10]: GET /api/users/user?id=8 ::1 404 5ms
 [2024-6-19T8-58-7]: GET /api/users/user/abeasdjfa;sdf ::1 404 9ms
+[2024-6-25T5-54-45]: GET /users/1 ::1 404 7ms
+[2024-6-25T5-55-18]: GET /users/6678c1446754cf112c789a7c ::1 404 9ms
+[2024-6-25T5-57-1]: GET /users ::1 404 1ms
+[2024-6-25T5-57-45]: GET /api/users/1 ::1 500 3ms
+[2024-6-25T5-58-10]: GET /api/users/6678c1446754cf112c789a7c ::1 200 11ms
+[2024-6-25T6-1-7]: PUT /api/users ::1 404 1ms
+[2024-6-25T6-1-21]: PUT /api/users/ ::1 404 1ms
+[2024-6-25T6-1-36]: POST /api/users ::1 201 21ms
+[2024-6-25T6-2-21]: POST /api/users ::1 201 7ms
+[2024-6-25T6-3-27]: POST /api/users ::1 201 4ms
+[2024-6-25T6-4-36]: DELETE /api/users/667a0c91c7b1b5cc14419f8a ::1 200 5ms
+[2024-6-25T6-5-48]: PUT /api/users/667a0cd3c7b1b5cc14419f8c ::1 200 10ms

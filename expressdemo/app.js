@@ -28,7 +28,7 @@
 // post method, vehicle information
 
 import express from "express";
-// import userRouter from "./routes/userRouter.js";
+import userRouter from "./routes/userRouter.js";
 import pRouter from "./routes/postRouter.js";
 import logger from "./middleware/logger.js";
 import errorHandler from "./middleware/errorHandler.js";
@@ -44,9 +44,9 @@ const app = express();
   try {
     let conn = await mongoose.connect("mongodb://localhost:27017/Batch3");
     console.log(`Connected to DB ${conn.connection.host}`);
-    // app.listen(3000, () => {
-    //   console.log("Server is up and running");
-    // });
+    app.listen(3000, () => {
+      console.log("Server is up and running");
+    });
 
     // let user = await User.create({
     //   username: "Suyog Baniya",
@@ -78,7 +78,7 @@ app.get("/", (req, res) => {
   res.send("<h4>Server is running</h4>");
 });
 
-// app.use("/api/users", userRouter);
+app.use("/api/users", userRouter);
 
 app.use("/api/posts", pRouter);
 
